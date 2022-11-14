@@ -1,0 +1,8 @@
+<% if @score < 0 %>
+<p>Sorry, <%= @word %> is not an english word</p>
+<% elsif @score == 0 %>
+<p>Sorry, <%= @word %> cannot be built out of <%= @letters %></p>
+<% else %>
+<h1>You scored</h1>
+<p><%= @score %> Points!</p>
+<% end %>

@@ -1,0 +1,16 @@
+<div class="container mb-3 flex-column">
+  <h1 class="d-flex justify-content-center">New Game</h1>
+  <div class="d-flex flex-row justify-content-center"><% @letters.each do |letter| %>
+    <div class="border m-3 p-3 pr-4 pl-4 bg-primary shadow text-white"><%= letter %></div>
+    <% end %>
+  </div>
+
+  <form action="/score" method="post" data-turbo="false" class="mt-5">
+    <!-- ... -->
+    <label for="playerInput" class="form-label m-3">What is the longest word you can form with these letters?</label>
+    <input type="text" class="form-control m-3" name="playerInput">
+    <button type="submit" class="btn btn-primary m-3">Play</button>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+  </form>
+</div>
