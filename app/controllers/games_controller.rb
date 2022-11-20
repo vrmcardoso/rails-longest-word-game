@@ -23,9 +23,9 @@ class GamesController < ApplicationController
           @score += 1
           grid.delete(char)
         end
-        if @score < @word.length
-          @score = 0
-        end
+      end
+      if @score < @word.length
+        @score = 0
       end
     else
       @score = -1
